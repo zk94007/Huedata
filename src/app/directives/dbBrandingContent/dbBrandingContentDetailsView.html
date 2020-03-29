@@ -1,0 +1,63 @@
+<div class="db-branding-content-details">
+	<div class="dialog">
+
+		<i class="glyphicon glyphicon-chevron-left" ng-click="LeftButtonHandler()"></i>
+		<i class="glyphicon glyphicon-chevron-right" ng-click="RightButtonHandler()"></i>
+
+		<div class="dialog__header">
+			<div class="button-close">
+				<i class="fa fa-close" ng-click="closeClickHandler()" style="font-size: 15px"></i>
+			</div>
+		</div>
+		<div class="dialog__body">
+			<div class="row">
+				<div class="col cols-6">
+					<div class="row logo_title">LOGO COLORS</div>
+					<div class="row">
+						<div class="color_chart">
+							<div>
+								<canvas id="doughnut" class="chart_i chart-doughnut" chart-data="data" chart-labels="labels" chart-colors="color" chart-options="option">
+								</canvas>
+							</div>
+							<div>
+								<div class="color_percent" ng-repeat="item in realdata">
+									<div class="color_percent__bar" style="background-color: {{item.color.hex}};"></div>
+									<div>{{item.percentage}}%</div>
+								</div>			
+							</div>
+						</div>
+					</div>
+					<div class="row" style="margin-top: 30px">
+						<div class="col cols-3 color_info" ng-repeat="item in realdata">
+							<div class="color_bar" style="background-color: {{item.color.hex}};"></div>
+							<div class="color_name">{{item.title}}</div>
+							<div class="color_value">{{item.color.rgb}}</div>
+							<div class="color_value">{{item.color.hex}}</div>
+						</div>
+					</div>
+				</div>
+				<div class="col cols-6">
+					<div class="logo_details">
+						<div class="sub_title"><strong>INDUSTRY</strong>: {{logodata.bio.industry_title}}</div>
+						<div class="sub_title"><strong>CITY</strong>: CITY</div>
+						<div class="sub_title"><strong>COUNTRY</strong>: {{logodata.bio.country}}</div>
+						<div class="sub_title"><strong>URL</strong>: WWW.URL.com</div>
+			
+						<button type="button" class="btn btn-outline-secondary">
+							<i class="glyphicon glyphicon-plus"></i> &nbsp;&nbsp;&nbsp;
+							ADD TO MOODBOARD
+						</button>
+						<div class="social-icon-groups" style="margin-top: 30px">
+							<span class="fs-4 font-weight-medium">SHARE</span>
+							<i class="fa fa-facebook" ng-click="shareFacebook(data.image_src)"></i>
+							<i class="fab fa-twitter" ng-click="shareTwitter(data.image_src)"></i>
+							<i class="fa fa-pinterest" ng-click="sharePinterest(data.image_src)"></i>
+							<i class="fab fa-google-plus-g" ng-click="shareGooglePlus(data.image_src)"></i>
+						</div>
+					</div>
+					<div class="dialog__footer"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
